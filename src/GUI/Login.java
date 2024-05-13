@@ -137,7 +137,7 @@ public class Login implements ActionListener{
     private void BackGroundImage(){
         BackGroundImage = new JLabel();
     
-        ImageIcon backgroundPic = new ImageIcon("Background1.jpg");
+        ImageIcon backgroundPic = new ImageIcon("Images/Background1.jpg");
         BackGroundImage.setIcon(backgroundPic);
         BackGroundImage.setSize(750,500);
         frame.add(BackGroundImage);

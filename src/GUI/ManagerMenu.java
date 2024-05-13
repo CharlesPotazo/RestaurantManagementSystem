@@ -10,6 +10,7 @@ public class ManagerMenu implements ActionListener {
     private JButton POSBtn,ReportBtn,InvBtn,WRBtn;
     
     ManagerMenu(){
+        square4();
         label3();
         buttons();
         square3();
@@ -44,6 +45,13 @@ public class ManagerMenu implements ActionListener {
     square3 = new JPanel();
     square3.setBounds(150, 0, 5, 100);
     square3.setBackground(Color.black);
+    frame.add(square3);
+    }
+    
+    private void square4(){
+    square3 = new JPanel();
+    square3.setBounds(0, 0, 900, 2);
+    square3.setBackground(new Color(167,54,49));
     frame.add(square3);
     }
     
@@ -112,7 +120,7 @@ public class ManagerMenu implements ActionListener {
     
     private void BackGroundImage(){
     JLabel BackGroundImage = new JLabel();
-    ImageIcon backgroundPic = new ImageIcon("Background2.JPg");
+    ImageIcon backgroundPic = new ImageIcon("Images/Background2.jpg");
         BackGroundImage.setIcon(backgroundPic);
         BackGroundImage.setSize(900,620);
         frame.add(BackGroundImage);
