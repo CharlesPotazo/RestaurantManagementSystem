@@ -85,7 +85,7 @@ public class CashierMenu implements ActionListener {
     
     private void BackGroundImage(){
     JLabel BackGroundImage = new JLabel();
-    ImageIcon backgroundPic = new ImageIcon("Background2.JPg");
+    ImageIcon backgroundPic = new ImageIcon("Background2.jpg");
         BackGroundImage.setIcon(backgroundPic);
         BackGroundImage.setSize(900,620);
         frame.add(BackGroundImage);
