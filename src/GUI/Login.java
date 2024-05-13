@@ -27,7 +27,13 @@ public class Login implements ActionListener{
         prompText();
         signButton();
         Square();
-        BackGroundImage();
+   
+        BackGroundImage = new JLabel();
+    
+        ImageIcon backgroundPic = new ImageIcon("Background1.jpg/");
+        BackGroundImage.setIcon(backgroundPic);
+        BackGroundImage.setSize(750,500);
+        frame.add(BackGroundImage);
         
         frame.setSize(750,535);
         frame.setLayout(null);
@@ -134,13 +140,7 @@ public class Login implements ActionListener{
     }    
     
     private void BackGroundImage(){
-    BackGroundImage = new JLabel();
     
-    String image = "/Images/Background1.png"; 
-    ImageIcon backgroundPic = new ImageIcon(getClass().getResource(image));
-        BackGroundImage.setIcon(backgroundPic);
-        BackGroundImage.setSize(750,500);
-        frame.add(BackGroundImage);
     }
     
     @Override
