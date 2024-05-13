@@ -132,7 +132,7 @@ public class ManagerMenu implements ActionListener {
             //palagay dito POS NIYO ROD and dj
         }
         else if(e.getSource() == ReportBtn){
-            //palagay dito Report mo bryle
+            ReportMenu rm = new ReportMenu();
         }
         else if(e.getSource() == InvBtn){
             //palagay dito Inventory mo elijah
