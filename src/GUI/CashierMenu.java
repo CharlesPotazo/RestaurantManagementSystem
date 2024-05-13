@@ -92,6 +92,7 @@ public class CashierMenu implements ActionListener {
         frame.add(BackGroundImage);
     }
     
+    @Override
     public void actionPerformed(ActionEvent e){
         if(e.getSource() == POSBtn){
             //palagay dito POS NIYO ROD and dj
