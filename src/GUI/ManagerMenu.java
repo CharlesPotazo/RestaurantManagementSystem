@@ -135,7 +135,7 @@ public class ManagerMenu implements ActionListener {
             ReportMenu rm = new ReportMenu();
         }
         else if(e.getSource() == InvBtn){
-            //palagay dito Inventory mo elijah
+            InventoryMenu IM = new InventoryMenu();
         }
         else if(e.getSource() == WRBtn){
             //palagay dito WasteTracking mo Ibarbia
