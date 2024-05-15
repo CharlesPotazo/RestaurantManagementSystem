@@ -126,7 +126,7 @@ public class Login implements ActionListener{
             if (cashierbtn.isSelected() && e.getSource() == signinButton) {
                 try {
                     if (verifiedCashier) {
-                        CashierMenu cashierMenu = new CashierMenu();
+                        POSMenu pos = new POSMenu();
                         frame.dispose();
                     } 
                     else {

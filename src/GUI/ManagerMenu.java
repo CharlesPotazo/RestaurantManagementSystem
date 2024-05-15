@@ -121,7 +121,8 @@ public class ManagerMenu implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e){
         if(e.getSource() == POSBtn){
-            //palagay dito POS NIYO ROD and dj
+            POSMenu pos = new POSMenu();
+            frame.dispose();
         }
         else if(e.getSource() == ReportBtn){
             ReportMenu reportMenu = new ReportMenu();//added by Bryle
