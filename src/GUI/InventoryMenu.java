@@ -6,40 +6,100 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class InventoryMenu implements ActionListener {
-
-    private JFrame frameinv = new JFrame();
-    private JPanel PNLupinv, PNLmidinv, PNLline;
-    private JLabel LBLinv, LBLlogoinv, bckgrndINV ;
-    private JButton rtrnmmBTNinv, addBTNinv, dltBTNinv;
+    private JFrame frame = new JFrame();
+    private JPanel divider2,divider,whiteRectangle,square1;
+    private JLabel inventoryTxt, logo ;
+    private JButton returnBtn, addBTNinv, dltBTN;
     private JTable tableinv;
 
-    InventoryMenu() {
-        addbuttoninv();
-        dltbuttoninv();
+    InventoryMenu() { //Hiniwalay po muna namin para po madali namin po maadjust
+        Texts();
+        Buttons();
         INVtable();
-        logoinv();
-        invtxt();
-        returnbuttoninv();
-        lineinv();
-        upsquare();
-        midsquare();
+        Panels();
+        Background();
         
-        bckgrndINV = new JLabel();
-
-        frameinv.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        ImageIcon backgroundPic = new ImageIcon("Images/Background2.jpg");
-        bckgrndINV.setIcon(backgroundPic);
-        bckgrndINV.setSize(900, 600);
-        frameinv.add(bckgrndINV);
-
-        frameinv.setSize(900, 600);
-        frameinv.setLayout(null);
-        frameinv.setTitle("J&J's Inventory");
-        frameinv.setLocationRelativeTo(null);
-        frameinv.setVisible(true);
-
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(900, 600);
+        frame.setLayout(null);
+        frame.setTitle("J&J's Inventory");
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
     }
+    
+    private void Texts(){//all texts
+        logo = new JLabel("J&J Resto");
+        logo.setBounds(20, 20, 150, 55);
+        logo.setForeground(new Color(167,54,49));
+        logo.setFont(new Font("impact", Font.PLAIN, 30));
+        frame.add(logo);
+        
+        inventoryTxt = new JLabel("INVENTORY");
+        inventoryTxt.setBounds(160, 20, 150, 55);
+        inventoryTxt.setForeground(new Color(167,54,49));
+        inventoryTxt.setFont(new Font("impact", Font.PLAIN, 32));
+        frame.add(inventoryTxt);
+    }
+    
+    private void Buttons(){// all buttons
+        addBTNinv = new JButton("ADD");
+        addBTNinv.setBounds(310, 400, 110, 60);
+        addBTNinv.setBackground(new Color(176,54,49));
+        addBTNinv.setBorderPainted(false);
+        addBTNinv.setForeground(new Color(255,255,255));
+        addBTNinv.setFont(new Font("impact", Font.PLAIN, 24));
+        frame.add(addBTNinv);
+        
+        dltBTN = new JButton("DELETE");
+        dltBTN.setBounds(500, 400, 110, 60);
+        dltBTN.setBackground(new Color(176,54,49));
+        dltBTN.setBorderPainted(false);
+        dltBTN.setForeground(new Color(255,255,255));
+        dltBTN.setFont(new Font("impact", Font.PLAIN, 24));
+        frame.add(dltBTN);
+        addBTNinv.addActionListener(this);
+        
+        returnBtn = new JButton("Return to the Main Menu");//Return to menu button
+        returnBtn.setBounds(300,40, 170, 30);
+        returnBtn.setBackground(Color.WHITE);
+        returnBtn.setBorderPainted(false);
+        returnBtn.setForeground(new Color(167, 54, 49));
+        returnBtn.setFont(new Font("Impact", Font.PLAIN, 12));
+        returnBtn.addActionListener(this);
+        frame.add(returnBtn);
+        
+    }
+    
+    private void Panels(){
+        divider2 = new JPanel();//red divider on the top
+        divider2.setBounds(0, 0, 900, 2);
+        divider2.setBackground(new Color(167,54,49));
+        frame.add(divider2);
 
+        divider = new JPanel();//black divider on the top
+        divider.setBounds(150, 0, 5, 100);
+        divider.setBackground(Color.black);
+        frame.add(divider);
+
+        whiteRectangle = new JPanel();//white rectangle on the top
+        whiteRectangle.setBounds(0, 0, 900, 100);
+        whiteRectangle.setBackground(Color.white);
+        frame.add(whiteRectangle);
+        
+        square1 = new JPanel();//square in the middle
+        square1.setBounds(120, 120, 650, 420);
+        square1.setBackground(Color.white);
+        frame.add(square1);
+    }
+    
+    private void Background(){
+        JLabel BackGroundImage = new JLabel();
+        ImageIcon backgroundPic = new ImageIcon("Images/Background2.jpg");
+        BackGroundImage.setIcon(backgroundPic);
+        BackGroundImage.setSize(900,620);
+        frame.add(BackGroundImage);
+    }
+    
     public void INVtable() {
         String[] columnNameinv = {"Product", "Quantity"};
         Object data[][]
@@ -51,93 +111,24 @@ public class InventoryMenu implements ActionListener {
                     {"Rice Cooker", "2pcs."},
                     {"Piyesa", "5pcs."}
                 };
-        JTable tableinv = new JTable(data, columnNameinv);
+        JTable  tableinv = new JTable(data, columnNameinv);
         JScrollPane scp = new JScrollPane(tableinv);
         scp.setBounds(205, 140, 500, 220);
-        frameinv.add(scp);
-        
-    }
-    
-    private void addbuttoninv(){
-        addBTNinv = new JButton("ADD");
-        addBTNinv.setBounds(310, 400, 110, 60);
-        addBTNinv.setBackground(new Color(176,54,49));
-        addBTNinv.setBorderPainted(false);
-        addBTNinv.setForeground(new Color(255,255,255));
-        addBTNinv.setFont(new Font("impact", Font.PLAIN, 24));
-        frameinv.add(addBTNinv);
-        
-        addBTNinv.addActionListener(this);
-    }
-    
-    private void dltbuttoninv(){
-        dltBTNinv = new JButton("DELETE");
-        dltBTNinv.setBounds(500, 400, 110, 60);
-        dltBTNinv.setBackground(new Color(176,54,49));
-        dltBTNinv.setBorderPainted(false);
-        dltBTNinv.setForeground(new Color(255,255,255));
-        dltBTNinv.setFont(new Font("impact", Font.PLAIN, 24));
-        frameinv.add(dltBTNinv);
-
-    }
-    
-    private void returnbuttoninv(){
-        rtrnmmBTNinv = new JButton("RETURN TO MAIN MENU");
-        rtrnmmBTNinv.setBounds(330, 1, 380, 60);
-        rtrnmmBTNinv.setBackground(Color.WHITE);
-        rtrnmmBTNinv.setBorderPainted(false);
-        rtrnmmBTNinv.setForeground(new Color(176,54,49));
-        rtrnmmBTNinv.setFont(new Font("impact", Font.PLAIN, 30));
-        frameinv.add(rtrnmmBTNinv);
-        
-        rtrnmmBTNinv.addActionListener(this);
-        
-    }
-    
-    private void upsquare(){
-    PNLupinv = new JPanel();
-    PNLupinv.setBounds(0, 0, 900, 65);
-    PNLupinv.setBackground(Color.white);
-    frameinv.add(PNLupinv);
-    }
-    
-    private void midsquare(){
-        PNLmidinv = new JPanel();
-    PNLmidinv.setBounds(120, 100, 650, 420);
-    PNLmidinv.setBackground(Color.white);
-    frameinv.add(PNLmidinv);
-    }
-    
-    private void lineinv(){
-    PNLline = new JPanel();
-    PNLline.setBounds(150, 0, 5, 65);
-    PNLline.setBackground(Color.black);
-    frameinv.add(PNLline);
-    }
-    
-    private void logoinv(){
-        LBLlogoinv = new JLabel("J&J Resto");
-        LBLlogoinv.setBounds(20, 2, 150, 55);
-        LBLlogoinv.setForeground(new Color(167,54,49));
-        LBLlogoinv.setFont(new Font("impact", Font.PLAIN, 30));
-        frameinv.add(LBLlogoinv);
-    }
-    
-    private void invtxt(){
-        LBLinv = new JLabel("INVENTORY");
-        LBLinv.setBounds(175, 2, 150, 55);
-        LBLinv.setForeground(new Color(167,54,49));
-        LBLinv.setFont(new Font("impact", Font.PLAIN, 32));
-        frameinv.add(LBLinv);
+        frame.add(scp);
     }
     
     @Override
     public void actionPerformed(ActionEvent e){
-        if (e.getSource() == rtrnmmBTNinv){
-        ManagerMenu MM = new ManagerMenu();
+        if (e.getSource() == returnBtn){
+            ManagerMenu managerMenu = new ManagerMenu();
+            frame.dispose();
         }
         else if (e.getSource() == addBTNinv){
-            AddInventory AddI = new AddInventory();
+            AddInventory addInventory = new AddInventory();
+            frame.dispose();
+        }
+        else if (e.getSource() == dltBTN){
+            //finifigure out pa po
         }
     }
     
