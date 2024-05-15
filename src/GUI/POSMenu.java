@@ -93,7 +93,7 @@ public class POSMenu implements ActionListener {
         dish1 = new JButton(foodData.Dish1().getName() + "(P" + foodData.Dish1().getPrice() + ")"); //kungpaockn
         dish1.setFont(new Font("impact", Font.PLAIN, 11));
         dish1.setBounds(120, 150, 160, 115);
-        ImageIcon menu1Icon = new ImageIcon("Dish1.jpg");
+        ImageIcon menu1Icon = new ImageIcon("Images/Dish1.jpg");
 
         dish1.setIcon(menu1Icon);
         dish1.setHorizontalTextPosition(JButton.CENTER);
@@ -105,7 +105,7 @@ public class POSMenu implements ActionListener {
         dish2 = new JButton(foodData.Dish2().getName() + "(P" + foodData.Dish2().getPrice() + ")"); //bpepper
         dish2.setFont(new Font("impact", Font.PLAIN, 11));
         dish2.setBounds(360, 150, 160, 115);
-        ImageIcon menu2Icon = new ImageIcon("Dish2.jpg");
+        ImageIcon menu2Icon = new ImageIcon("Images/Dish2.jpg");
 
         dish2.setIcon(menu2Icon);
         dish2.setHorizontalTextPosition(JButton.CENTER);
@@ -117,7 +117,7 @@ public class POSMenu implements ActionListener {
         dish3 = new JButton(foodData.Dish3().getName() + "(P" + foodData.Dish3().getPrice() + ")"); //mushroom
         dish3.setFont(new Font("impact", Font.PLAIN, 11));
         dish3.setBounds(120, 300, 160, 115);
-        ImageIcon menu3Icon = new ImageIcon("C:Dish3.jpg");
+        ImageIcon menu3Icon = new ImageIcon("Images/Dish3.jpg");
 
         dish3.setIcon(menu3Icon);
         dish3.setHorizontalTextPosition(JButton.CENTER);
@@ -129,7 +129,7 @@ public class POSMenu implements ActionListener {
         dish4 = new JButton(foodData.Dish4().getName() + "(P" + foodData.Dish4().getPrice() + ")"); //orangeckn
         dish4.setFont(new Font("impact", Font.PLAIN, 11));
         dish4.setBounds(360, 300, 160, 115);
-        ImageIcon menu4Icon = new ImageIcon("Dish4.jpg");
+        ImageIcon menu4Icon = new ImageIcon("Images/Dish4.jpg");
 
         dish4.setIcon(menu4Icon);
         dish4.setHorizontalTextPosition(JButton.CENTER);
@@ -201,6 +201,29 @@ public class POSMenu implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == dish1) {
+            FoodModel dish = foodData.Dish1();
+            updateOrder(dish);
+        } else if (e.getSource() == dish2) {
+            FoodModel dish = foodData.Dish2();
+            updateOrder(dish);
+        } else if (e.getSource() == dish3) {
+            FoodModel dish = foodData.Dish3();
+            updateOrder(dish);
+        } else if (e.getSource() == dish4) {
+            FoodModel dish = foodData.Dish4();
+            updateOrder(dish);
+        } else if (e.getSource() == btnCancelOrder) {
+            orderArea.setText("");
+            total = 0.0;
+            orderTotal.setText("Total: ₱0.00");
+        } else if (e.getSource() == btnCheckout) {
+            acceptPayment();
+        } else if (e.getSource() == returnToMainMenu){
+            ManagerMenu managermenu = new ManagerMenu ();
+            f.dispose();
+        }
+            
         
     }
 }
