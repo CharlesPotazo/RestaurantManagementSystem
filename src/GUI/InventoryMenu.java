@@ -48,6 +48,7 @@ public class InventoryMenu implements ActionListener {
         addBTNinv.setBorderPainted(false);
         addBTNinv.setForeground(new Color(255,255,255));
         addBTNinv.setFont(new Font("impact", Font.PLAIN, 24));
+        addBTNinv.addActionListener(this);
         frame.add(addBTNinv);
         
         dltBTN = new JButton("DELETE");
@@ -57,7 +58,7 @@ public class InventoryMenu implements ActionListener {
         dltBTN.setForeground(new Color(255,255,255));
         dltBTN.setFont(new Font("impact", Font.PLAIN, 24));
         frame.add(dltBTN);
-        addBTNinv.addActionListener(this);
+        
         
         returnBtn = new JButton("Return to the Main Menu");//Return to menu button
         returnBtn.setBounds(300,40, 170, 30);

@@ -9,7 +9,7 @@ public class testingClasses {
         
         //input niyo rito yung mga class na gusto nyo agad without the hassle na dadaan pa muna ng main etc...
      
-      InventoryMenu log = new InventoryMenu();
+      ManagerMenu log = new ManagerMenu();
     }
     
 }

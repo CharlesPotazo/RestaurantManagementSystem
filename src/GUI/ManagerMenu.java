@@ -132,7 +132,8 @@ public class ManagerMenu implements ActionListener {
             frame.dispose();
         }
         else if(e.getSource() == WRBtn){
-            //palagay dito WasteTracking mo Ibarbia
+            WasteTracking wasteTracking = new WasteTracking(); //added by Ibarbia
+            frame.dispose();
         }
     }
 }
