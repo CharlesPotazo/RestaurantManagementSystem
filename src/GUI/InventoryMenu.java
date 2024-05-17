@@ -112,9 +112,15 @@ public class InventoryMenu implements ActionListener {
                     {"Rice Cooker", "2pcs."},
                     {"Piyesa", "5pcs."}
                 };
-        JTable  tableinv = new JTable(data, columnNameinv);
+        JTable tableinv = new JTable(data, columnNameinv);
+        tableinv.getTableHeader().setBackground(new Color(176,54,49));
+        tableinv.getTableHeader().setForeground(new Color(255,255,255));
+        tableinv.getTableHeader().setFont(new Font("impact", Font.PLAIN, 20));
+
         JScrollPane scp = new JScrollPane(tableinv);
-        scp.setBounds(205, 140, 500, 220);
+        scp.setBounds(205, 140, 500, 250);
+        tableinv.setEnabled(false);
+        
         frame.add(scp);
     }
     

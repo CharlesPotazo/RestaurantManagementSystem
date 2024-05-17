@@ -6,7 +6,7 @@ import java.awt.event.*;
 public class AddInventory implements ActionListener{
     private JFrame frame = new JFrame();
     private JTextField prodTF, quanTF;
-    private JPanel divider2,divider, whiteRectangle,midSquare ;
+    private JPanel divider2,divider, whiteRectangle,midSquare,  prodSquare, quanSquare ;
     private JButton rtnmmbtnADD, addbtn;
     private JLabel invaddLBL, prodLBL, quanLBL, logo;
     
@@ -33,7 +33,8 @@ public class AddInventory implements ActionListener{
         frame.add(logo);
         
         quanLBL = new JLabel("Quantity");
-        quanLBL.setBounds(525, 170, 150, 50);
+        quanLBL.setBounds(525, 150, 150, 50);
+        quanLBL.setForeground(Color.WHITE);
         quanLBL.setFont(new Font("League Spartan", Font.BOLD, 28));
         frame.add(quanLBL);
         
@@ -44,7 +45,8 @@ public class AddInventory implements ActionListener{
         frame.add(invaddLBL);
         
         prodLBL = new JLabel("Product");
-        prodLBL.setBounds(260, 170, 150, 50);
+        prodLBL.setBounds(260, 150, 150, 50);
+        prodLBL.setForeground(Color.WHITE);
         prodLBL.setFont(new Font("League Spartan", Font.BOLD, 28));
         frame.add(prodLBL);
     }
@@ -85,6 +87,17 @@ public class AddInventory implements ActionListener{
     }
     
     private void Panels(){//All Panels
+        prodSquare = new JPanel();
+        prodSquare.setBounds(242, 145, 150, 70);
+        prodSquare.setBackground(new Color(176,54,49));
+        frame.add(prodSquare);
+        
+        quanSquare = new JPanel();
+        quanSquare.setBounds(510, 145, 150, 70);
+        quanSquare.setBackground(new Color(176,54,49));
+        
+        frame.add(quanSquare);
+        
         divider2 = new JPanel();//red divider on the top
         divider2.setBounds(0, 0, 900, 2);
         divider2.setBackground(new Color(167,54,49));
